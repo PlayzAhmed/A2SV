@@ -1,0 +1,29 @@
+# Problem: Dictionary - https://codeforces.com/problemset/problem/1674/B
+
+#include <bits/stdc++.h>
+#define ll long long
+#define all(x) x.begin(), x.end()
+#define pb push_back
+#define MOD 1000000007
+#define FAST ios_base::sync_with_stdio(false); cin.tie(NULL);
+using namespace std;
+
+int main(){
+    FAST
+    map<char, ll> mp;
+    
+    for (ll i = 0; i < 26; i++) {
+        mp[char(97+i)] = i;
+    }
+
+    ll n; cin >> n;
+
+    while (n--) {
+        string w; cin >> w;
+
+        cout << mp[w[0]] * 25 + mp[w[1]] + (w[0] < w[1]? 0 : 1) << "\n";
+
+    }
+
+    return 0;
+}
